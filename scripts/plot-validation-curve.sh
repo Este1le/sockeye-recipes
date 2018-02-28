@@ -2,7 +2,7 @@
 
 
 if [ $# -ne 2 ]; then
-    echo "Usage: translate.sh hyperparams.txt device(cpu/gpu)"
+    echo "Usage: plot-validation-curve.sh hyperparams.txt device(cpu/gpu)"
     exit
 fi
 
