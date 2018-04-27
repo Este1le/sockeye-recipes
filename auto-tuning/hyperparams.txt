@@ -61,8 +61,8 @@ valid_tok=$workdir/sample-de-en/valid
 ### Number of symbols to use for BPE ###
 # Note: we perform source and target BPE separately
 # This corresponds to initial source (src) and target (trg) vocab size
-bpe_symbols_src=5000
-bpe_symbols_trg=5000
+bpe_symbols_src=4000
+bpe_symbols_trg=4000
 
 ### Filename for BPE-processed bitext file ###
 # Note: the following default names should be fine for most use cases
@@ -89,23 +89,23 @@ num_layers=1 #[1,2]
 
 # Training configuration
 max_seq_len="100:100" # do not change
-num_src_words=5000 # do not change 
-num_trg_words=5000 # do not change
+num_src_words=4000 # do not change 
+num_trg_words=4000 # do not change
 word_src_count=1 # do not change
 word_trg_count=1 # do not change
-batch_size=128 #[16,256]
+batch_size=64 #[16,256]
 
 # dropout: [0,0.8]
-embed_src_dropout=.0
-embed_trg_dropout=.0
+embed_src_dropout=.1
+embed_trg_dropout=.1
 # embed_dropout="${embed_src_dropout}:${embed_trg_dropout}"
-rnn_encoder_dropout_outputs=.0
-rnn_decoder_dropout_outputs=.0
+rnn_encoder_dropout_outputs=.1
+rnn_decoder_dropout_outputs=.1
 # rnn_dropout_inputs="${rnn_encoder_dropout_outputs}:${rnn_decoder_dropout_outputs}"
-rnn_encoder_dropout_states=.0
-rnn_decoder_dropout_states=.0
+rnn_encoder_dropout_states=.1
+rnn_decoder_dropout_states=.1
 # rnn_dropout_states="${rnn_encoder_dropout_states}:${rnn_decoder_dropout_states}"
-rnn_decoder_hidden_dropout=.0
+rnn_decoder_hidden_dropout=.1
 
 initial_learning_rate=0.003 #[0.0001,0.1]
 
