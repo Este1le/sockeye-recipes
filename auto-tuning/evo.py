@@ -41,7 +41,7 @@ trans_dict = {'num_src_embed': (int, lambda x : 2**(6+4*x)),
              'rnn_encoder_dropout_states': (float, lambda x : 0.8*x),
              'rnn_decoder_dropout_states': (float, lambda x : 0.8*x),
              'rnn_decoder_hidden_dropout': (float, lambda x : 0.8*x),
-             'initial_learning_rate': (int, lambda x : 10**(-1-3*x))   
+             'initial_learning_rate': (float, lambda x : 10**(-1-3*x))   
              }
 
 reverse_trans_dict = {'num_src_embed': lambda x : (math.log(x,2)-6)/4., 
@@ -60,7 +60,6 @@ reverse_trans_dict = {'num_src_embed': lambda x : (math.log(x,2)-6)/4.,
              'rnn_encoder_dropout_states': lambda x : x/0.8,
              'rnn_decoder_dropout_states': lambda x : x/0.8,
              'rnn_decoder_hidden_dropout': lambda x : x/0.8,
-             'initial_learning_rate': lambda x : (math.log(x,10)+1)/(-3.)
              }
 
 def get_arguments():
@@ -125,7 +124,7 @@ def evolution(args):
         with open(args.gene % str(gene_idx).zfill(2), "w") as gene:
             # map scaled genes to original values
             chop = lambda x : 1 if x>1 else (0 if x<0 else x)
-            genes = [trans_dict[param][1](chop(g)) if trans_dict[param]==float else int(round(trans_dict[param][1](chop(g))))
+            genes = [trans_dict[param][1](chop(g)) if trans_dict[param][0]==float else int(round(trans_dict[param][1](chop(g))))
                                                    for param, g in zip(param_dict.keys(), X[gene_idx])]
             gene.write("\n".join([p+"="+str(g) for p,g in zip(param_dict.keys(), genes)]))
 

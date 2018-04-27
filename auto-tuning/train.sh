@@ -65,7 +65,6 @@ $py_cmd -m sockeye.train -s ${train_bpe}.$src \
                         --rnn-decoder-hidden-dropout $rnn_decoder_hidden_dropout \
                         --initial-learning-rate $initial_learning_rate \
                         --keep-last-params $keep_last_params \
-                        --use-tensorboard \
                         --disable-device-locking \
                         $device \
                         -o $model_path

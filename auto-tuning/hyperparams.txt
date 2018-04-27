@@ -36,7 +36,7 @@ set -a
 ### User-specified directories ###
 workdir=~/sockeye_trial/
 datadir=$workdir/data
-rootdir=~/my-sockeye-recipes/
+rootdir=~/sockeye-recipes/
 autotunedir=$rootdir/auto-tuning/
 
 ### Language pair (source and target) ###
