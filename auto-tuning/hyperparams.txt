@@ -93,7 +93,7 @@ num_src_words=5000 # do not change
 num_trg_words=5000 # do not change
 word_src_count=1 # do not change
 word_trg_count=1 # do not change
-batch_size=64 #[16,256]
+batch_size=128 #[16,256]
 
 # dropout: [0,0.8]
 embed_src_dropout=.0
@@ -119,7 +119,7 @@ beam_size=5 #[1,16]
 # Logging and stopping condition
 min_num_epochs=5
 max_num_epochs=20
-checkpoint_frequency=5000
+checkpoint_frequency=100
 keep_last_params=1
 
 

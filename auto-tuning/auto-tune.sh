@@ -4,7 +4,7 @@
 # Using Sockeye and CMA-ES algorithm
 
 if [ $# -ne 3 ]; then
-    echo "Usage: auto-tune.sh hyperparams.txt device(gpu/checkpoint_pathu) num_devices"
+    echo "Usage: auto-tune.sh hyperparams.txt device(gpu/cpu) num_devices"
     exit
 fi
 

@@ -60,6 +60,7 @@ reverse_trans_dict = {'num_src_embed': lambda x : (math.log(x,2)-6)/4.,
              'rnn_encoder_dropout_states': lambda x : x/0.8,
              'rnn_decoder_dropout_states': lambda x : x/0.8,
              'rnn_decoder_hidden_dropout': lambda x : x/0.8,
+             'initial_learning_rate': lambda x : (math.log(x,10)+1)/(-3.)
              }
 
 def get_arguments():
