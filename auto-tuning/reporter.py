@@ -53,6 +53,8 @@ def report(args, rst, trg):
         scores = []
 
     with open(trg, "w") as f:
+        # remove duplicate model results
+        scores = [s for s in scores if s[:2]!=str(args.n_pop).zfill(2)]
         scores = scores + [str(args.n_pop).zfill(2) + "\t" + str(rst) + "\n"]
         scores = sorted(scores)
         f.writelines(scores)
