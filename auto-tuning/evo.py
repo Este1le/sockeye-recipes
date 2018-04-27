@@ -10,19 +10,17 @@ from collections import OrderedDict
 range_dict = {'num_src_embed':(64,1024), 
              'num_trg_embed':(64,1024),
              'rnn_num_hidden':(64,2048),
-             'num_layers':(1,2),
-             'num_src_words':(2000,80000),
-             'num_trg_words':(2000,80000),
-             'word_src_count':(1,2),
+             'num_layers':(1,2), #(1,3)
+             'word_src_count':(1,2), # 1 fix
              'word_trg_count':(1,2),
-             'batch_size':(16,256),
+             'batch_size':(16,256), # 128, 256
              'embed_src_dropout':(0,0.8),
              'embed_trg_dropout':(0,0.8),
              'rnn_encoder_dropout_outputs':(0,0.8),
              'rnn_decoder_dropout_outputs':(0,0.8),
              'rnn_encoder_dropout_states':(0,0.8),
              'rnn_decoder_dropout_states':(0,0.8),
-             'rnn_decoder_hidden_dropout':(0,0.8),
+             'rnn_decoder_hidden_dropout':(0,0.8), # 0.5?
              'initial_learning_rate':(0.0001,0.1)   
              }
 '''
